@@ -9,8 +9,7 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.dkengineering.jaldurga"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
