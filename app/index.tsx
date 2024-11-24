@@ -1,23 +1,31 @@
-import React from "react";
-import {StyleSheet, Text, ScrollView, Alert} from "react-native";
+import React, {useRef, useState} from "react";
+import {StyleSheet, ScrollView} from "react-native";
 import {SafeAreaView, SafeAreaProvider} from "react-native-safe-area-context";
 import {FloatingAction} from "react-native-floating-action";
-import { useRouter } from 'expo-router';
+import LinkDeviceForm from "@/components/LinkDeviceForm";
+import {BottomSheetModal} from '@gorhom/bottom-sheet';
+
 
 
 const App = () => {
-    const router = useRouter();
+    const [showBottomSheet, setShowBottomSheet] = useState(false)
+    const bottomSheetModalRef = useRef<BottomSheetModal>(null);
+    const handleAction = ()=>{
+        bottomSheetModalRef?.current?.expand()
+    }
   return (<SafeAreaProvider>
     <SafeAreaView style={styles.container} edges={["top"]}>
-      <ScrollView style={styles.scrollView}></ScrollView>
+      {/* <ScrollView style={styles.scrollView}></ScrollView> */}
       <FloatingAction
         actions={[]}
         onPressMain={() => {
-            router.push('/newDeviceRegistration')
-        }}
+            setShowBottomSheet(true)
+            }}
         showBackground={false}
         animated={false}
       />
+      
+      {showBottomSheet && <LinkDeviceForm ref={bottomSheetModalRef}/>}
     </SafeAreaView>
   </SafeAreaProvider>)
 };

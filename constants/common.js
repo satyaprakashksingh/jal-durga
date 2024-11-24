@@ -1,4 +1,4 @@
-const LABELS = {
+export const LABELS = {
     DASHBOARD: 'Dashboard',
     LINK_DEVICE: 'Link device',
     ABOUT: 'About',
@@ -53,5 +53,5 @@ const LABELS = {
     DRY_OVERLOAD_TIMER: 'Dry Overload Timer',
     DRY_RUN_TIMER: 'Dry run timer',
     OVERLOAD_TIMER: 'Overload timer',
-    
+
 }

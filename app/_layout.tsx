@@ -1,4 +1,5 @@
 import {Stack} from "expo-router";
+import {LABELS} from "@/constants/common";
 
 export default function Layout() {
   return (
@@ -13,9 +14,8 @@ export default function Layout() {
         },
       }}
     >
-      <Stack.Screen name="index" options={{title: 'Dashboard'}} />
-      <Stack.Screen name="/about" options={{title: 'About'}} />
-      <Stack.Screen name="/linkDevice" options={{title: 'Link Device', presentation: "formSheet"}}/>
+      <Stack.Screen name="index" options={{title: LABELS.DASHBOARD}} />
+      <Stack.Screen name="/about" options={{title: LABELS.ABOUT}} />
     </Stack>
   );
 }
