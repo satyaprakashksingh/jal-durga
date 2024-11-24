@@ -1,32 +1,24 @@
-import React, {useRef, useState} from "react";
-import {StyleSheet, ScrollView} from "react-native";
+import React from "react";
+import {StyleSheet} from "react-native";
 import {SafeAreaView, SafeAreaProvider} from "react-native-safe-area-context";
 import {FloatingAction} from "react-native-floating-action";
-import LinkDeviceForm from "@/components/LinkDeviceForm";
-import {BottomSheetModal} from '@gorhom/bottom-sheet';
 
 
 
 const App = () => {
-    const [showBottomSheet, setShowBottomSheet] = useState(false)
-    const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-    const handleAction = ()=>{
-        bottomSheetModalRef?.current?.expand()
-    }
+
   return (<SafeAreaProvider>
     <SafeAreaView style={styles.container} edges={["top"]}>
       {/* <ScrollView style={styles.scrollView}></ScrollView> */}
       <FloatingAction
         actions={[]}
         onPressMain={() => {
-            setShowBottomSheet(true)
+        
             }}
         showBackground={false}
         animated={false}
       />
-      
-      {showBottomSheet && <LinkDeviceForm ref={bottomSheetModalRef}/>}
-    </SafeAreaView>
+</SafeAreaView>
   </SafeAreaProvider>)
 };
 
@@ -42,6 +34,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 42,
     padding: 12,
+    color: 'red'
   },
 });
 

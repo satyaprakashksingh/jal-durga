@@ -12,13 +12,6 @@ export default function Layout() {
             title: 'overview',
           }}
         />
-        <Drawer.Screen
-          name="user/[id]" // This is the name of the page and must match the url from root
-          options={{
-            drawerLabel: 'User',
-            title: 'overview',
-          }}
-        />
       </Drawer>
     </GestureHandlerRootView>
   );
